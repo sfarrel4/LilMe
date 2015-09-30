@@ -1,0 +1,47 @@
+/* -----------------------
+Base styles
+------------------------*/
+
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #333;
+	background-color: #AED7D3;
+	font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+}
+
+/* -----------------------
+Layout styles
+------------------------*/
+
+.container
+{
+	max-width: 50em;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.header
+{
+	color: #fff;
+	background-color: #F1C6D9;
+	padding: 1em 1.25em;
+}
+
+.mainStuff
+{
+	background-color: #fff;
+	color:#567;
+	padding: 1em 1.25em;
+}
+
+
+.footer
+{
+	color: #fff;
+	background-color: #B5A4AC;
+	padding: 1em 1.25em;
+}
+
+

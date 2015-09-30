@@ -1,6 +1,5 @@
 package com.lilme.jdodb;
 
-import java.security.Key;
 import java.util.Date;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;

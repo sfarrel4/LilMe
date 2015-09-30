@@ -97,15 +97,15 @@
 					</div>
 					<div>
 						Any Allergies?: </br>
-										<input type=checkbox name="allergies" value="cowMilk">Cow's Milk</br>
-										<input type=checkbox name="allergies" value="eggs">Eggs</br>
-										<input type=checkbox name="allergies" value="peanuts">Peanuts</br>
-										<input type=checkbox name="allergies" value="fish">Fish</br>
-										<input type=checkbox name="allergies" value="shellfish">Shellfish</br>
-										<input type=checkbox name="allergies" value="treeNuts">Tree Nuts</br>
-										<input type=checkbox name="allergies" value="wheat">Wheat</br>
-										<input type=checkbox name="allergies" value="soy">Soy</br>
-										<input type=checkbox name="allergies" value="none">None</br>
+										<input type=checkbox name="allergies" value="cowMilk">Cow's Milk
+										<input type=checkbox name="allergies" value="eggs">Eggs
+										<input type=checkbox name="allergies" value="peanuts">Peanuts
+										<input type=checkbox name="allergies" value="fish">Fish
+										<input type=checkbox name="allergies" value="shellfish">Shellfish
+										<input type=checkbox name="allergies" value="treeNuts">Tree Nuts
+										<input type=checkbox name="allergies" value="wheat">Wheat
+										<input type=checkbox name="allergies" value="soy">Soy
+										<input type=checkbox name="allergies" value="none">None
 										
 					</div>
 					<div>

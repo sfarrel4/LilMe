@@ -18,9 +18,7 @@ public class AddChildServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		
 		 String firstName = req.getParameter("firstName");
-		 String middleInitialString = req.getParameter("middleInitial");
-		 char middleInitialArray[] = middleInitialString.toCharArray();
-		 char middleInitial = middleInitialArray[0];
+		 String middleInitial = req.getParameter("middleInitial");
 		 String lastName = req.getParameter("lastName");
 		 String DOBMonth = req.getParameter("DOBMonth");
 		 String DOBDay = req.getParameter("DOBDay");
@@ -28,7 +26,7 @@ public class AddChildServlet extends HttpServlet {
 		 
 		 @SuppressWarnings("deprecation")
 		Date dateOfBirth = new Date(Integer.parseInt(DOBYear),Integer.parseInt(DOBMonth),Integer.parseInt(DOBDay));
-		 String[] allergies = req.getParameterValues("allergies");
+		//String[] allergies = req.getParameterValues("allergies");
 	
 		 boolean hasAllergies = true;
 		 int lunchGroup = Integer.parseInt(req.getParameter("lunchGroup"));
@@ -41,7 +39,7 @@ public class AddChildServlet extends HttpServlet {
 		 
 		 PersistenceManager pm = PMF.get().getPersistenceManager();
 		 
-		 ChildAccount c = new ChildAccount(firstName, lastName, middleInitial, dateOfBirth, hasAllergies, lunchGroup, allergies);
+		 ChildAccount c = new ChildAccount(firstName, lastName, middleInitial, dateOfBirth, hasAllergies, lunchGroup);
 		
 		 try{
 			 pm.makePersistent(c);

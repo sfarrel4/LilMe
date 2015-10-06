@@ -1,22 +1,26 @@
 package com.lilme.jdodb;
 
 import java.util.Date;
+import java.util.List;
+
+import javax.jdo.PersistenceManager;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.Query;
 
 @PersistenceCapable
 public class ChildAccount {
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-    private long id;
+    private Long id;
 
     @Persistent
     private String firstName;
     
     @Persistent
-    private char middleInitial;
+    private String middleInitial;
 
     @Persistent
     private String lastName;
@@ -29,18 +33,18 @@ public class ChildAccount {
     
     @Persistent
     private int lunchGroup;
-    
+    /*
     @Persistent 
     private String[] allergies;
-
-    public ChildAccount(String firstName, String lastName, char middleInitial, Date dateOfBirth, boolean hasAllergies, int lunchGroup, String[] allergies) {
+    */
+    public ChildAccount(String firstName, String lastName, String middleInitial, Date dateOfBirth, boolean hasAllergies, int lunchGroup) {
         this.firstName = firstName;
         this.middleInitial = middleInitial;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.hasAllergies = hasAllergies;
         this.lunchGroup = lunchGroup;
-        this.allergies = allergies;
+        //this.allergies = allergies;
     }
 
     // Accessors for the fields. JDO doesn't use these, but your application does.
@@ -56,11 +60,11 @@ public class ChildAccount {
         this.firstName = firstName;
     }
     
-    public char getMiddleInitial(){
+    public String getMiddleInitial(){
     	return middleInitial;
     }
     
-    public void setMiddleInitial(char middleInitial){
+    public void setMiddleInitial(String middleInitial){
     	this.middleInitial = middleInitial;
     }
 
@@ -90,10 +94,27 @@ public class ChildAccount {
     public void setLunchGroup(int lunchGroup){
     	this.lunchGroup = lunchGroup;
     }
-    
+    /*
     public String[] getAllergies(){
     	return allergies;
     }
-    
+    */
+    @SuppressWarnings("unchecked")
+	public static List<ChildAccount> getAllChild(){
+    	PersistenceManager pm = PMF.get().getPersistenceManager();
+		List<ChildAccount> results = null;
+		try {
+
+			//Query q = pm.newQuery("SELECT * FROM ChildAccount");
+			Query q = pm.newQuery(ChildAccount.class);
+			//q.setOrdering("name asc");
+
+			results = (List<ChildAccount>) q.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Child not Found");
+		}
+		return results;
+    }
     
 }

@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <%@ page import="java.util.*" %>
+<%@ page import="com.lilme.jdodb.ChildAccount" %>
+<%@ page import="javax.jdo.PersistenceManager" %>
+<%@ page import="com.lilme.jdodb.PMF" %>
+<%@ page import="javax.jdo.Query" %>
+
 <html lang="en">
 	<head>
 		<title>Show Child</title>
@@ -13,10 +18,23 @@
 			</div>
 			<div class="mainStuff" align="center">
 					<center><h2>Show Child</h2></center>
-					<%List<String> firstNameList = new ArrayList<String>();
-						firstNameList = (ArrayList<String>)request.getAttribute("firstNameList");
+					<%
+					
+						String firstName = null;
+						
+						List<ChildAccount> allChild = ChildAccount.getAllChild();
+						
+						
+						if (allChild!=null) {
+							
+							for(int i = 0; i < allChild.size(); i++){
+								firstName = allChild.get(i).getFirstName();
+							
+						
+						}}
+						
 					%>
-					<table>
+					<table border="1">
 						<tr>
 							<td>Last Name</td>
 							<td>First Name</td>
@@ -28,9 +46,7 @@
 						<tr>
 							<td>blah</td>
 						<td>
-					<%
-					System.out.println(firstNameList.get(0));
-					%>
+							<%=firstName %>
 					</td>
 					</tr>
 					</table>

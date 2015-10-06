@@ -95,6 +95,7 @@
 						<option value="1978">2018</option>
 					</select>
 					</div>
+					
 					<div>
 						Any Allergies?: </br>
 										<input type=checkbox name="allergies" value="cowMilk">Cow's Milk

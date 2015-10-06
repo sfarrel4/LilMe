@@ -26,7 +26,7 @@ public class ChildAccount {
     private String lastName;
 
     @Persistent
-    private Date dateOfBirth;
+    private String dateOfBirth;
     
     @Persistent
     private boolean hasAllergies;
@@ -37,7 +37,7 @@ public class ChildAccount {
     @Persistent 
     private String[] allergies;
     */
-    public ChildAccount(String firstName, String lastName, String middleInitial, Date dateOfBirth, boolean hasAllergies, int lunchGroup) {
+    public ChildAccount(String firstName, String lastName, String middleInitial, String dateOfBirth, boolean hasAllergies, int lunchGroup) {
         this.firstName = firstName;
         this.middleInitial = middleInitial;
         this.lastName = lastName;
@@ -76,10 +76,10 @@ public class ChildAccount {
         this.lastName = lastName;
     }
 
-    public Date getDOB() {
+    public String getDOB() {
         return dateOfBirth;
     }
-    public void setDOB(Date dateOfBirth) {
+    public void setDOB(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
     public boolean getHasAlerrgies(){
@@ -107,7 +107,7 @@ public class ChildAccount {
 
 			//Query q = pm.newQuery("SELECT * FROM ChildAccount");
 			Query q = pm.newQuery(ChildAccount.class);
-			//q.setOrdering("name asc");
+			q.setOrdering("lastName asc");
 
 			results = (List<ChildAccount>) q.execute();
 		} catch (Exception e) {

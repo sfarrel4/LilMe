@@ -29,14 +29,7 @@
 						
 						
 						if (allChild!=null) {
-							/*
-							for(int i = 0; i < allChild.size(); i++){
-								firstName = allChild.get(i).getFirstName();
-								lastName = allChild.get(i).getLastName();
-								middleInitial = allChild.get(i).getMiddleInitial();
-								dateOfBirth = allChild.get(i).getDOB().toString();
-								lunchGroup = allChild.get(i).getLunchGroup();
-							*/
+						
 						
 						
 					%>
@@ -53,7 +46,7 @@
 							firstName = allChild.get(i).getFirstName();
 							lastName = allChild.get(i).getLastName();
 							middleInitial = allChild.get(i).getMiddleInitial();
-							dateOfBirth = allChild.get(i).getDOB().toString();
+							dateOfBirth = allChild.get(i).getDOB();
 							lunchGroup = allChild.get(i).getLunchGroup();
 							
 						
@@ -83,7 +76,7 @@
 						}
 					%>
 					</table>
-						<% }else{
+						<% }else if(allChild == null){
 						
 						
 				%>

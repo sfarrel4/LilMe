@@ -24,8 +24,9 @@ public class AddChildServlet extends HttpServlet {
 		 String DOBDay = req.getParameter("DOBDay");
 		 String DOBYear = req.getParameter("DOBYear");
 		 
-		 @SuppressWarnings("deprecation")
-		Date dateOfBirth = new Date(Integer.parseInt(DOBYear),Integer.parseInt(DOBMonth),Integer.parseInt(DOBDay));
+	
+		//Date dateOfBirth = new Date(Integer.parseInt(DOBYear),Integer.parseInt(DOBMonth),Integer.parseInt(DOBDay));
+		 String dateOfBirth = DOBMonth + "/" + DOBDay + "/" + DOBYear;
 		//String[] allergies = req.getParameterValues("allergies");
 	
 		 boolean hasAllergies = true;
@@ -48,7 +49,7 @@ public class AddChildServlet extends HttpServlet {
 			pm.close();
 		}
 		
-		
+		resp.sendRedirect("CreateChild.jsp");
 		
 	}
 

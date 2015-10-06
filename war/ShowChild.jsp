@@ -21,17 +21,23 @@
 					<%
 					
 						String firstName = null;
-						
+						String lastName = null;
+						String middleInitial = null;
+						String dateOfBirth = null;
+						int lunchGroup = 0;
 						List<ChildAccount> allChild = ChildAccount.getAllChild();
 						
 						
 						if (allChild!=null) {
-							
+							/*
 							for(int i = 0; i < allChild.size(); i++){
 								firstName = allChild.get(i).getFirstName();
-							
+								lastName = allChild.get(i).getLastName();
+								middleInitial = allChild.get(i).getMiddleInitial();
+								dateOfBirth = allChild.get(i).getDOB().toString();
+								lunchGroup = allChild.get(i).getLunchGroup();
+							*/
 						
-						}}
 						
 					%>
 					<table border="1">
@@ -43,14 +49,46 @@
 							<td>Allergies</td>
 							<td>Lunch Group</td>
 						</tr>
+						<%	for(int i = 0; i < allChild.size(); i++){
+							firstName = allChild.get(i).getFirstName();
+							lastName = allChild.get(i).getLastName();
+							middleInitial = allChild.get(i).getMiddleInitial();
+							dateOfBirth = allChild.get(i).getDOB().toString();
+							lunchGroup = allChild.get(i).getLunchGroup();
+							
+						
+						
+						%>
 						<tr>
-							<td>blah</td>
+						<td>
+							<%=lastName %>
+						</td>
 						<td>
 							<%=firstName %>
-					</td>
+						</td>
+						<td>
+							<%=middleInitial %>
+						</td>
+						<td>
+							<%=dateOfBirth %>
+						</td>
+						<td>
+						</td>
+						<td>
+							Lunch group <%=lunchGroup %>
+						</td>
 					</tr>
+					
+				<%
+						}
+					%>
 					</table>
-
+						<% }else{
+						
+						
+				%>
+				<h1>No child data found</h1>
+				<%} %>
 		</div>
 			<div class="footer">
 				<center>Demo 10/1/2015 -- IT 390</center>

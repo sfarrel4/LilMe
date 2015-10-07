@@ -23,7 +23,7 @@
 			
 						<center>
 
-			<img src='childhandssmall.jpg' alt='Day Care Fun' />	
+			<img src='assets/images/childhandssmall.jpg' alt='Day Care Fun' />	
 					<h2>New Child</h2>
 			</center>
 			

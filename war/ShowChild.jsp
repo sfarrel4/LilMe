@@ -7,16 +7,22 @@
 
 <html lang="en">
 	<head>
-		<title>Show Child</title>
+		<title>Add Child</title>
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="stylesheet" href="assets/css/styles.css">
+    <link href='assets/css/bootstrap.min.css' rel='stylesheet'>
 	</head>
 	<body>
-		<div class="container">
-			<div class="header">
-				<h1>Lil Me Daycare</h1>
+		<div class='navbar navbar-default navbar-static-top'> 
+			<div class='container-fluid'>
+          		<a href="index.html" class='navbar-brand'>Lil' Me Day Care Logo</a>
+				<ul class="nav navbar-nav navbar-right">
+            		<li><a href='about.html'>About</a></li>
+          		</ul>
 			</div>
-			<div class="mainStuff" align="center">
+		</div>
+			
+		<div class="mainStuff" align="center">
 					<center><h2>Show Child</h2></center>
 					<%
 					
@@ -94,9 +100,13 @@
 				<h1>No child data found</h1>
 				<%} %>
 		</div>
-			<div class="footer">
-				<center>Demo 10/1/2015 -- IT 390</center>
-			</div>
+			<div class='navbar navbar-default navbar-static-bottom'> 
+    <div class='container-fluid'>
+
+            <center>Lil' Me Day Care &copy;2015.</center>
+
+		</div>
+	</div>
 		</div>
 	</body>
 </html>

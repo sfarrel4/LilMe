@@ -25,6 +25,7 @@
 						String middleInitial = null;
 						String dateOfBirth = null;
 						int lunchGroup = 0;
+						String[] allergies = null;
 						List<ChildAccount> allChild = ChildAccount.getAllChild();
 						
 						
@@ -48,6 +49,7 @@
 							middleInitial = allChild.get(i).getMiddleInitial();
 							dateOfBirth = allChild.get(i).getDOB();
 							lunchGroup = allChild.get(i).getLunchGroup();
+							allergies = allChild.get(i).getAllergies();
 							
 						
 						
@@ -66,9 +68,18 @@
 							<%=dateOfBirth %>
 						</td>
 						<td>
+							<%
+								for(int x=0; x < allergies.length; x++ ){
+									if(x==allergies.length-1){
+										%><%=allergies[x]%>
+									<%}%><%else{ %>
+										<%=allergies[x] + ", " %>
+							<% }
+									}%>
+							
 						</td>
 						<td>
-							Lunch group <%=lunchGroup %>
+							Lunch Group <%=lunchGroup %>
 						</td>
 					</tr>
 					

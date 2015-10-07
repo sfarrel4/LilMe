@@ -27,7 +27,7 @@ public class AddChildServlet extends HttpServlet {
 	
 		//Date dateOfBirth = new Date(Integer.parseInt(DOBYear),Integer.parseInt(DOBMonth),Integer.parseInt(DOBDay));
 		 String dateOfBirth = DOBMonth + "/" + DOBDay + "/" + DOBYear;
-		//String[] allergies = req.getParameterValues("allergies");
+		String[] allergies = req.getParameterValues("allergies");
 	
 		 boolean hasAllergies = true;
 		 int lunchGroup = Integer.parseInt(req.getParameter("lunchGroup"));
@@ -40,7 +40,7 @@ public class AddChildServlet extends HttpServlet {
 		 
 		 PersistenceManager pm = PMF.get().getPersistenceManager();
 		 
-		 ChildAccount c = new ChildAccount(firstName, lastName, middleInitial, dateOfBirth, hasAllergies, lunchGroup);
+		 ChildAccount c = new ChildAccount(firstName, lastName, middleInitial, dateOfBirth, hasAllergies, lunchGroup, allergies);
 		
 		 try{
 			 pm.makePersistent(c);

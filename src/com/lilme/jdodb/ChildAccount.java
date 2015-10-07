@@ -8,6 +8,7 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.Serialized;
 import javax.jdo.Query;
 
 @PersistenceCapable
@@ -33,18 +34,18 @@ public class ChildAccount {
     
     @Persistent
     private int lunchGroup;
-    /*
-    @Persistent 
+    
+    @Persistent
     private String[] allergies;
-    */
-    public ChildAccount(String firstName, String lastName, String middleInitial, String dateOfBirth, boolean hasAllergies, int lunchGroup) {
+    
+    public ChildAccount(String firstName, String lastName, String middleInitial, String dateOfBirth, boolean hasAllergies, int lunchGroup, String[] allergies) {
         this.firstName = firstName;
         this.middleInitial = middleInitial;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.hasAllergies = hasAllergies;
         this.lunchGroup = lunchGroup;
-        //this.allergies = allergies;
+        this.allergies = allergies;
     }
 
     // Accessors for the fields. JDO doesn't use these, but your application does.
@@ -94,11 +95,11 @@ public class ChildAccount {
     public void setLunchGroup(int lunchGroup){
     	this.lunchGroup = lunchGroup;
     }
-    /*
+    
     public String[] getAllergies(){
     	return allergies;
     }
-    */
+    
     @SuppressWarnings("unchecked")
 	public static List<ChildAccount> getAllChild(){
     	PersistenceManager pm = PMF.get().getPersistenceManager();

@@ -7,35 +7,87 @@
 <!-- but may lead to some differences in layout.   -->
 
 <html>
+
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Welcome to Lil' Me</title>
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link href="assets/css/styles.css" rel="stylesheet" >
+    <link href='assets/css/bootstrap.min.css' rel='stylesheet'>
   </head>
 
-  <body>
-    <div class="container">
-			<div class="header">
-				<h1>Lil Me Daycare</h1>
-			</div>
-			<div class="mainStuff" align="center">
-				<center><h2>What would you like to do? </h2></center>
-				<table>
-      				<tr>
-        				<td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
-      				</tr>
-      				<tr>
-      					<td><a href="CreateChild.jsp">Add a child</a></td>
-      				</tr>
-      				<tr>
-      					<td><a href="ShowChild.jsp">ShowChild (Under Construction)</a></td>
-      				</tr>
-    			</table>
-			</div>
-			<div class="footer">
-				<center>Demo 10/1/2015 -- IT 390</center>
-			</div>
+ <body>
+
+   <div class='navbar navbar-default navbar-static-top'> 
+    <div class='container-fluid'>
+          <a href="index.html" class='navbar-brand'>Lil' Me Day Care Logo</a>
+	
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href='about.html'>About</a></li>
+          </ul>
+
 		</div>
-  </body>
+	</div>
+
+
+
+      <div class='row text-center'>
+        <div class='col-md-3 col-md-offset-1 well'>
+          <h3>Enroll Child</h3>
+		  <p><a href="CreateChild.jsp" class="btn btn-info" role="button"><i class='glyphicon glyphicon-user'></i></a></p>
+        </div>
+        
+	<div class='col-md-3 col-md-offset-1 well'>
+          <h3>Show Children</h3>
+  		<p><a href="ShowChild.jsp" class="btn btn-info" role="button"><i class='glyphicon glyphicon-user'></i></a></p>
+        </div>
+
+        <div class='col-md-3 col-md-offset-1 well'>
+          <h3>Future Add-on</h3>
+			<p><a href="http://www.google.com" class="btn btn-info" role="button"><i class='glyphicon glyphicon-user'></i></a></p>
+        </div>
+      </div>
+    </div>	
+
+
+      <div class='row text-center'>
+        <div class='col-md-3 col-md-offset-1 well'>
+          <h3>Future Add-on</h3>
+          <p><button class="btn btn-info"><i class='glyphicon glyphicon-apple'></i></button></p>
+        </div>
+        
+	<div class='col-md-3 col-md-offset-1 well'>
+          <h3>Future Add-on</h3>
+          <p><button class="btn btn-info"><i class='glyphicon glyphicon-time'></i></button></p>
+        </div>
+
+        <div class='col-md-3 col-md-offset-1 well'>
+          <h3>Future Add-on</h3>
+          <p><button class="btn btn-info"><i class='glyphicon glyphicon-modal-window'></i></button></p>
+        </div>
+      </div>
+    </div>
+
+   <div class='navbar navbar-default navbar-static-bottom'> 
+    <div class='container-fluid'>
+
+            <center>Lil' Me Day Care &copy;2015.</center>
+
+		</div>
+	</div>
+
+</body>
+
+    	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    	<script src='assets/js/bootstrap.min.js'></script>
+
+    <script>
+      $(function() {
+        $('.nav-tabs a').click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+      });
+    </script>
+
 </html>

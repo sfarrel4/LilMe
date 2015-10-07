@@ -4,25 +4,40 @@
 		<title>Add Child</title>
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="stylesheet" href="assets/css/styles.css">
+    <link href='assets/css/bootstrap.min.css' rel='stylesheet'>
 	</head>
 	<body>
-		<div class="container">
-			<div class="header">
-				<h1>Lil Me Daycare</h1>
-			</div>
-			<div class="mainStuff" align="center">
-					<center><h2>Add Child</h2></center>
-					<form action="/add-child" method="post">
-					<div>
-						Child First Name: <input type="text" name="firstName" />
-					</div>
-					<div>
-						Child Middle Initial: <input type ="text" name="middleInitial" maxlength="1" />
-					</div>
+	
+	   <div class='navbar navbar-default navbar-static-top'> 
+    <div class='container-fluid'>
+          <a href="index.html" class='navbar-brand'>Lil' Me Day Care Logo</a>
+	
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href='about.html'>About</a></li>
+          </ul>
+
+		</div>
+	</div>
+	
+			<div class="mainStuff" role="form">
+			
+						<center>
+
+			<img src='childhandssmall.jpg' alt='Day Care Fun' />	
+					<h2>New Child</h2>
+			</center>
+			
+					<form action="/add-child" method="post" class="form-inline">
 					
-					<div>
-						Child Last Name: <input type="text" name="lastName" />
+					<div class="form-group">
+						Child First Name: <input class="form-control" placeholder="Enter First Name" type="text" name="firstName" />
+
+						Child Middle Initial: <input class="form-control" placeholder="Enter Middle Initial" type ="text" name="middleInitial" maxlength="1" />
+					
+						Child Last Name: <input class="form-control" placeholder="Enter Last Name" type="text" name="lastName" />
 					</div>
+
+					
 					<div>
 						Date of Birth: <select name="DOBMonth">
 						<option> - Month - </option>
@@ -124,9 +139,29 @@
 					</div>	
 				</form>
 		</div>
-			<div class="footer">
-				<center>Demo 10/1/2015 -- IT 390</center>
-			</div>
 		</div>
+		
+		   <div class='navbar navbar-default navbar-static-bottom'> 
+    <div class='container-fluid'>
+
+            <center>Lil' Me Day Care &copy;2015.</center>
+
+		</div>
+	</div>
+		
 	</body>
+	
+	
+	    	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    	<script src='assets/js/bootstrap.min.js'></script>
+
+    <script>
+      $(function() {
+        $('.nav-tabs a').click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+      });
+    </script>
+	
 </html>

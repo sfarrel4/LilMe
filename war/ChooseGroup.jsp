@@ -6,11 +6,17 @@
 <!-- with a "Standards Mode" doctype is supported, -->
 <!-- but may lead to some differences in layout.   -->
 
+<%@ page import="java.util.*" %>
+<%@ page import="com.lilme.jdodb.ChildAccount" %>
+<%@ page import="javax.jdo.PersistenceManager" %>
+<%@ page import="com.lilme.jdodb.PMF" %>
+<%@ page import="javax.jdo.Query" %>
+
 <html>
 
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Welcome to Lil' Me</title>
+    <title>Group Choice</title>
     <link href="favicon.ico" rel="shortcut icon">
     <link href="assets/css/styles.css" rel="stylesheet" >
     <link href='assets/css/bootstrap.min.css' rel='stylesheet'>
@@ -30,42 +36,33 @@
 	</div>
 
 
-	<!-- Row one of features 3 features per row -->
+	<!-- Row one of features 2 features per row -->
     <div class='row text-center'>
-    	<div class='col-md-3 col-md-offset-1 well'>
-        	<h3>Enroll Child</h3>
-		  	<p><a href="CreateChild.jsp" class="btn btn-info" role="button"><i class='glyphicon glyphicon-user'></i></a></p>
+    	<div class='col-md-4 col-md-offset-1 well'>
+        	<h3>Lunch Group 1</h3>
+		  	<p><a href="ShowChild.jsp?group=${1}" class="btn btn-info" role="button"><i class='glyphicon glyphicon-user'></i></a></p>
         </div>
         
-		<div class='col-md-3 col-md-offset-1 well'>
-        	<h3>Lunch Groups</h3>
-  			<p><a href="ChooseGroup.jsp" class="btn btn-info" role="button"><i class='glyphicon glyphicon-user'></i></a></p>
-        </div>
-		<!-- 
-        <div class='col-md-3 col-md-offset-1 well'>
-        	<h3>New Parent Account</h3>
-			<p><a href="CreateParent.jsp" class="btn btn-info" role="button"><i class='glyphicon glyphicon-user'></i></a></p>
+		<div class='col-md-4 col-md-offset-1 well'>
+        	<h3>Lunch Group 2</h3>
+  			<p><a href="ShowChild.jsp?group=${2}" class="btn btn-info" role="button"><i class='glyphicon glyphicon-user'></i></a></p>
         </div>
 	</div>
-	 -->
 
-
-	<!-- Row two of features 3 features per row -->
-    <!-- <div class='row text-center'>
-    	<div class='col-md-3 col-md-offset-1 well'>
-        	<h3>Show Parents</h3>
-          	<p><a href="ShowParent.jsp" class="btn btn-info" role="button"><i class='glyphicon glyphicon-user'></i></a></p>
+	<!--  Row two of features 2 features per row -->
+    <div class='row text-center'>
+    	<div class='col-md-4 col-md-offset-1 well'>
+        	<h3>Lunch Group 3</h3>
+  			<p><a href="ShowChild.jsp?group=${3}" class="btn btn-info" role="button"><i class='glyphicon glyphicon-user'></i></a></p>
         </div>
-         -->
         
-		<!-- Template for future add-ons 
-		<div class='col-md-3 col-md-offset-1 well'>
-        	<h3>Future Add-on</h3>
-          	<p><button class="btn btn-info"><i class='glyphicon glyphicon-time'></i></button></p>
+		 
+		<div class='col-md-4 col-md-offset-1 well'>
+        	<h3>All Children</h3>
+  			<p><a href="ShowChild.jsp?group=${4}" class="btn btn-info" role="button"><i class='glyphicon glyphicon-user'></i></a></p>
         </div>
-	 	-->
 	</div>
-
+	
    <div class='navbar navbar-default navbar-static-bottom'> 
     <div class='container-fluid'>
 

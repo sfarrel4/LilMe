@@ -20,21 +20,18 @@
 	</div>
 	
 			<div class="mainStuff" role="form">
-			
-						<center>
-
-			<img src='assets/images/childhandssmall.jpg' alt='Day Care Fun' />	
-					<h2>New Child</h2>
-			</center>
+				<img src='assets/images/childhandssmall.jpg' alt='Day Care Fun' 
+					style="float:left;"/>	
+					<center><h2>New Child</h2></center>
 			
 					<form action="/add-child" method="post" class="form-inline">
 					
 					<div class="form-group">
-						Child First Name: <input class="form-control" placeholder="Enter First Name" type="text" name="firstName" />
-
-						Child Middle Initial: <input class="form-control" placeholder="Enter Middle Initial" type ="text" name="middleInitial" maxlength="1" />
-					
-						Child Last Name: <input class="form-control" placeholder="Enter Last Name" type="text" name="lastName" />
+						Child First Name: <input class="form-control" placeholder="Enter First Name" type="text" name="firstName" style="width: 15em;height:2em;" />
+						<br />
+						Child Middle Initial: <input class="form-control" placeholder="Enter Middle Initial" type ="text" name="middleInitial" maxlength="1" style="width: 15em;height:2em;" />
+						<br />					
+						Child Last Name: <input class="form-control" placeholder="Enter Last Name" type="text" name="lastName" style="width: 15em;height:2em;" />
 					</div>
 
 					
@@ -117,6 +114,7 @@
 										<input type=checkbox name="allergies" value="Eggs">Eggs
 										<input type=checkbox name="allergies" value="Peanuts">Peanuts
 										<input type=checkbox name="allergies" value="Fish">Fish
+										<br />
 										<input type=checkbox name="allergies" value="Shellfish">Shellfish
 										<input type=checkbox name="allergies" value="Tree Nuts">Tree Nuts
 										<input type=checkbox name="allergies" value="Wheat">Wheat

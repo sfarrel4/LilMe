@@ -49,4 +49,22 @@ public class ShowChildServlet extends HttpServlet {
 		}
 		return firstName;
 	}
+	
+	public List<ChildAccount> getLunchGroupAccounts(int i){
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		List<ChildAccount> groupList = null;
+	
+		Query q = null;
+		try{
+			q = pm.newQuery("javax.jdo.query.SQL", "Select * from ChildAccount");
+			q.setClass(ChildAccount.class);
+			groupList = (List<ChildAccount>) q.execute();
+			
+		}
+		finally{
+			q.closeAll();
+			pm.close();
+		}
+		return groupList;
+	}
 }

@@ -17,30 +17,21 @@ public class AddParentServlet extends HttpServlet {
 	}
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String firstName = req.getParameter("firstName");
+		String middleInitial = req.getParameter("middleInitial");
 		String lastName = req.getParameter("lastName");
-		String DOBMonth = req.getParameter("DOBMonth");
-		String DOBDay = req.getParameter("DOBDay");
-		String DOBYear = req.getParameter("DOBYear");
-		String lunchTest = req.getParameter("lunchGroup");
-		boolean hasAllergies = false;
+		String email = req.getParameter("email");
+		
 
-		String dateOfBirth = DOBMonth + "/" + DOBDay + "/" + DOBYear;
-		String[] allergies = req.getParameterValues("allergies");
+		//String[] childrenList = req.getParameterValues("childrenList");   
 
-		if (allergies != null){
-			hasAllergies = true;
-		}
-
-		int lunchGroup = Integer.parseInt(req.getParameter("lunchGroup"));
-
-		String[] validTest = {firstName, lastName, DOBMonth, DOBDay, DOBYear, lunchTest};
+		String[] validTest = {firstName, middleInitial, lastName, email};
 		boolean validEntry = isEmpty(validTest);
 		if (validEntry == false){
 			PersistenceManager pm = PMF.get().getPersistenceManager();
-			ChildAccount c = new ChildAccount(firstName, lastName, middleInitial, dateOfBirth, hasAllergies, lunchGroup, allergies);
+			ParentAccount p = new ParentAccount(firstName, lastName, middleInitial, lastName, email);
 
 			try{
-				pm.makePersistent(c);
+				pm.makePersistent(p);
 			}
 			finally{
 				pm.close();

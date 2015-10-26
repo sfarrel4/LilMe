@@ -32,10 +32,13 @@
 						Parent Middle Initial: <input class="form-control" placeholder="Enter Middle Initial" type ="text" name="middleInitial" maxlength="1" style="width: 15em;height:2em;" />
 						<br />					
 						Parent Last Name: <input class="form-control" placeholder="Enter Last Name" type="text" name="lastName" style="width: 15em;height:2em;" />
+						<br />					
+						Parent Email Address: <input class="form-control" placeholder="Enter Email Address" type="text" name="email" style="width: 15em;height:2em;" />
+					
 					</div>
 
 					<div>
-						Add Children: <select name="lunchGroup">
+						Add Children: <select name="childrenList">
 									<option>-Lunch Group-</option>
 									<option value="1">Lunch Group 1</option>
 									<option value="2">Lunch Group 2</option>

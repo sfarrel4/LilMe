@@ -28,7 +28,7 @@ public class AddParentServlet extends HttpServlet {
 		boolean validEntry = isEmpty(validTest);
 		if (validEntry == false){
 			PersistenceManager pm = PMF.get().getPersistenceManager();
-			ParentAccount p = new ParentAccount(firstName, lastName, middleInitial, lastName, email);
+			ParentAccount p = new ParentAccount(firstName, lastName, middleInitial, email);
 
 			try{
 				pm.makePersistent(p);

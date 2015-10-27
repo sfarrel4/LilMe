@@ -1,7 +1,5 @@
 package com.lilme.jdodb;
 
-
-import java.util.Date;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;

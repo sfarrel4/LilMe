@@ -20,6 +20,7 @@ public class AddParentServlet extends HttpServlet {
 		String middleInitial = req.getParameter("middleInitial");
 		String lastName = req.getParameter("lastName");
 		String email = req.getParameter("email");
+
 		
 
 		//String[] childrenList = req.getParameterValues("childrenList");   

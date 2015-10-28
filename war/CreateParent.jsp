@@ -68,7 +68,7 @@
 					</ul>
 
 					<div>
-						Add Children: <select name="childrenList">
+						Add Child: <select name="childAccounts">
 									<option>-Lunch Group-</option>
 									<option value="1">Lunch Group 1</option>
 									<option value="2">Lunch Group 2</option>

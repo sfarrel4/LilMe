@@ -1,19 +1,18 @@
 package com.lilme.jdodb;
 
-import java.util.Date;
 import javax.jdo.PersistenceManager;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent; 
 import javax.jdo.annotations.PrimaryKey;
-import javax.jdo.annotations.Serialized;
 import javax.jdo.Query;
 import java.util.List;
 
 
 @PersistenceCapable
 public class ParentAccount {
-   //many side of the relation ship.. a parent can only own one child....
+  
+	//many side of the relation ship.. a parent can only own one child....
     @Persistent
     private ChildAccount childAccount;
     

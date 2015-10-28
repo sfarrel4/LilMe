@@ -23,6 +23,7 @@ public class AddChildServlet extends HttpServlet {
 		String DOBDay = req.getParameter("DOBDay");
 		String DOBYear = req.getParameter("DOBYear");
 		String lunchTest = req.getParameter("lunchGroup");
+		
 		boolean hasAllergies = false;
 
 		String dateOfBirth = DOBMonth + "/" + DOBDay + "/" + DOBYear;

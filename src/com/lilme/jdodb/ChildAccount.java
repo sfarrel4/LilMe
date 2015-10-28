@@ -1,5 +1,4 @@
 package com.lilme.jdodb;
-
 import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
@@ -47,6 +46,13 @@ public class ChildAccount {
         this.hasAllergies = hasAllergies;
         this.lunchGroup = lunchGroup;
         this.allergies = allergies;
+        //add code to create a parent account on the fly so the system wont crash.. parent account must be created before child account..
+        ParentAccount test = new ParentAccount("","","","");
+        this.parentList.add(test);
+        ////////end create parent
+        //add code to create a parent account on the fly so the system wont crash.. parent account must be created before child account..
+        
+        ////////end create parent
     }
 
     // Accessors for the fields. JDO doesn't use these, but your application does.

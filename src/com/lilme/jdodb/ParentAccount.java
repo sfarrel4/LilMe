@@ -1,23 +1,26 @@
 package com.lilme.jdodb;
 
-import java.util.List;
-
+import java.util.Date;
 import javax.jdo.PersistenceManager;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.Persistent; 
 import javax.jdo.annotations.PrimaryKey;
 import javax.jdo.annotations.Serialized;
 import javax.jdo.Query;
+import java.util.List;
+
 
 @PersistenceCapable
-
 public class ParentAccount {
+   ///many side of the relation ship.. a parent can only own one child....
+    @Persistent
+    private ChildAccount childAccount;
 	
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
     private Long parentid;
-
+    
     @Persistent
     private String firstName;
     
@@ -27,7 +30,6 @@ public class ParentAccount {
     @Persistent
     private String lastName;
 
-    
     @Persistent
     private String email;
     

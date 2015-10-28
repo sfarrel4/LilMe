@@ -1,22 +1,23 @@
 package com.lilme.jdodb;
 
-import java.util.Date;
 import java.util.List;
-
 import javax.jdo.PersistenceManager;
+import javax.jdo.Query;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
-import javax.jdo.annotations.Serialized;
-import javax.jdo.Query;
 
 @PersistenceCapable
 public class ChildAccount {
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-    private Long id;
-
+    private long id;
+    
+    ////A child can have many parents.
+    @Persistent(mappedBy = "ChildAccount")
+    private List<ParentAccount> parentList;
+    
     @Persistent
     private String firstName;
     

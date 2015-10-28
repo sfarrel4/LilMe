@@ -44,7 +44,10 @@
                 	<span class="menu"><img src="assets/images/menu-icon.png" alt=""></span>
                     <ul class="navgation">
                     	<li><a class="active" href="CreateChild.jsp" class="scroll">Enroll Child</a></li>
-                        <li><a class="active" href="ChooseGroup.jsp" class="scroll">View Lunch Groups</a></li>
+                        
+                     <li><a class="active" href="ChooseGroup.jsp" class="scroll">View Lunch Groups</a></li>
+                       	<li><a class="active" href="CreateParent.jsp" class="scroll">Create Parent</a></li>
+                           	    	<li><a class="active" href="ShowParent.jsp" class="scroll">Show Parent</a></li>
                     </ul>
                     <!--start-top-nav-script-->
 		 			<script>

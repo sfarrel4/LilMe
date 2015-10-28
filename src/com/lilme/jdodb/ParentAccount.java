@@ -13,9 +13,20 @@ import java.util.List;
 
 @PersistenceCapable
 public class ParentAccount {
-   ///many side of the relation ship.. a parent can only own one child....
+   //many side of the relation ship.. a parent can only own one child....
     @Persistent
     private ChildAccount childAccount;
+    
+    ChildAccount getchildAccount() {
+        return childAccount;
+    }
+    void setChiildAccount(ChildAccount childAccount) {
+        this.childAccount = childAccount;
+    }
+    
+   //end ChildAccount relationship 
+    
+    //parent attributes
 	
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)

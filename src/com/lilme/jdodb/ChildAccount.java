@@ -11,7 +11,7 @@ import javax.jdo.annotations.PrimaryKey;
 public class ChildAccount {
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-    private long id;
+    private Long id;
     
     ////A child can have many parents.
     @Persistent(mappedBy = "ChildAccount")
@@ -57,7 +57,7 @@ public class ChildAccount {
 
     // Accessors for the fields. JDO doesn't use these, but your application does.
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

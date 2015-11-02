@@ -65,6 +65,7 @@
 						<li><label>First Name <span class="required">*</span></label><input type="text" name="firstName" class="field-long" placeholder="First Name" /></li>
 						<li><label>Middle Initial</label><input type="text" name="middleInitial" class="field-divided" placeholder="Middle Initial" maxlength="1" /></li>
 						<li><label>Last Name <span class="required">*</span></label><input type="text" name="lastName" class="field-long" placeholder="Last Name" /></li>
+					<li><label>Email <span class="required">*</span></label><input type="text" name="email" class="field-long" placeholder="email" /></li>
 					</ul>
 
 					<!-- <div>

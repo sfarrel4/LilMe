@@ -14,8 +14,8 @@ public class ChildAccount {
     private Long id;
     
     ////A child can have many parents.
-    @Persistent(mappedBy = "ChildAccount")
-    private List<ParentAccount> parentList;
+    //@Persistent(mappedBy = "ChildAccount")
+    //private List<ParentAccount> parentList;
     
     @Persistent
     private String firstName;
@@ -47,8 +47,8 @@ public class ChildAccount {
         this.lunchGroup = lunchGroup;
         this.allergies = allergies;
         //add code to create a parent account on the fly so the system wont crash.. parent account must be created before child account..
-        ParentAccount test = new ParentAccount("","","","");
-        this.parentList.add(test);
+        //ParentAccount test = new ParentAccount("","","","");
+        //this.parentList.add(test);
         ////////end create parent
         //add code to create a parent account on the fly so the system wont crash.. parent account must be created before child account..
         

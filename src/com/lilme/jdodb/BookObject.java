@@ -1,5 +1,9 @@
 package com.lilme.jdodb;
 
+import java.util.List;
+
+import javax.jdo.PersistenceManager;
+import javax.jdo.Query;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -58,5 +62,20 @@ public class BookObject {
 	    
 	    public void setBookImage(String bookImage){
 	    	this.bookImageURL = bookImage;
+	    }
+	    
+	    @SuppressWarnings("unchecked")
+		public static List<BookObject> getAllBooks(){
+	    	PersistenceManager pm = PMF.get().getPersistenceManager();
+			List<BookObject> results = null;
+			try {
+				Query q = pm.newQuery(BookObject.class);
+				q.setOrdering("bookTitle asc");
+				results = (List<BookObject>) q.execute();
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("Books not Found");
+			}
+			return results;
 	    }
 }

@@ -18,13 +18,16 @@ public class AddBookServlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String bookTitle = req.getParameter("bookTitle");
+		String bookAuthor = req.getParameter("bookAuthor");
 		String bookSynop = req.getParameter("bookSynop");
-		String bookImageURL = req.getParameter("bookImageURL");
-		String[] validTest = {bookTitle, bookSynop, bookImageURL};
+		String bookLessons = req.getParameter("bookLessons");
+		String bookQuestions = req.getParameter("bookQuestions");
+		String bookImage = req.getParameter("bookImage");
+		String[] validTest = {bookTitle, bookAuthor, bookSynop, bookLessons, bookQuestions, bookImage};
 		boolean validEntry = isEmpty(validTest);
 		if (validEntry == false){
 			PersistenceManager pm = PMF.get().getPersistenceManager();
-			BookObject b = new BookObject(bookTitle, bookSynop, bookImageURL);
+			BookObject b = new BookObject(bookTitle, bookAuthor, bookSynop, bookLessons, bookQuestions, bookImage);
 
 			try{
 				pm.makePersistent(b);

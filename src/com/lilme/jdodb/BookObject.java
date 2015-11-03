@@ -22,18 +22,27 @@ public class BookObject {
 	    private String bookTitle;
 	    
 	    @Persistent
+	    private String bookAuthor;
+	    
+	    @Persistent
 	    private String bookSynop;
 	    
-	   // @Persistent
-	   // private Blob bookImage;
 	    @Persistent
-	    private String bookImageURL;
+	    private String bookLessons;
 	    
-	    public BookObject(String bookTitle, String bookSynop, String bookImageURL){
+	    @Persistent
+	    private String bookQuestions;
+	    
+	    @Persistent
+	    private String bookImage;
+	    
+	    public BookObject(String bookTitle, String bookAuthor, String bookSynop, String bookLessons, String bookQuestions, String bookImage){
 	    	this.bookTitle = bookTitle;
+	    	this.bookAuthor = bookAuthor;
 	    	this.bookSynop = bookSynop;
-	    	//this.bookImage = bookImage;
-	    	this.bookImageURL = bookImageURL;
+	    	this.bookLessons = bookLessons;
+	    	this.bookQuestions = bookQuestions;
+	    	this.bookImage = bookImage;
 	    }
 	    
 	    public Long getId() {
@@ -48,6 +57,14 @@ public class BookObject {
 	    	this.bookTitle = bookTitle;
 	    }
 	    
+	    public String getBookAuthor(){
+	    	return bookTitle;
+	    }
+	    
+	    public void setBookAuthor(String bookAuthor){
+	    	this.bookAuthor = bookAuthor;
+	    }
+	    
 	    public String getBookSynop(){
 	    	return bookSynop;
 	    }
@@ -56,12 +73,28 @@ public class BookObject {
 	    	this.bookSynop = bookSynop;
 	    }
 	    
+	    public String getBookLessons(){
+	    	return bookLessons;
+	    }
+	    
+	    public void setBookLessons(String bookLessons){
+	    	this.bookLessons = bookLessons;
+	    }
+	    
+	    public String getBookQuestions(){
+	    	return bookQuestions;
+	    }
+	    
+	    public void setBookQuestions(String bookQuestions){
+	    	this.bookQuestions = bookQuestions;
+	    }
+	    
 	    public String getBookImage(){
-	    	return bookImageURL;
+	    	return bookImage;
 	    }
 	    
 	    public void setBookImage(String bookImage){
-	    	this.bookImageURL = bookImage;
+	    	this.bookImage = bookImage;
 	    }
 	    
 	    @SuppressWarnings("unchecked")

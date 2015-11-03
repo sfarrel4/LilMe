@@ -2,6 +2,8 @@ package com.lilme;
 
 import java.io.IOException;
 import java.util.Date;
+import java.net.URLEncoder;
+
 
 import javax.jdo.PersistenceManager;
 import javax.servlet.http.HttpServlet;
@@ -47,7 +49,8 @@ public class AddChildServlet extends HttpServlet {
 			finally{
 				pm.close();
 			}
-			resp.sendRedirect("CreateChild.jsp");
+			String message = " Added child successfully!";
+            resp.sendRedirect("CreateChild.jsp?message=" + URLEncoder.encode(message, "UTF-8"));
 		} else {
 			resp.sendRedirect("CreateChild.jsp");
 		}

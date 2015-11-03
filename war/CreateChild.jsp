@@ -58,6 +58,7 @@
 		<div class="mainStuff" role="form">
 			<img src='assets/images/childhandssmall.jpg' alt='Day Care Fun' style="max-height: 27em; max-width: 18em; float:left; padding-right: 2em;"/>
 			<h2>Add New Child</h2>
+			<p>${param.message}</p>
 			
 			<form action="/add-child" method="post" class="form-style-1">
 				<ul>

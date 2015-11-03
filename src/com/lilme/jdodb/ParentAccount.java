@@ -43,13 +43,17 @@ public class ParentAccount {
     @Persistent
     private String email;
     
+    @Persistent
+    private Long childID;
+    
     //constructor for Parent Account
     
-    public ParentAccount(String firstName, String lastName, String middleInitial, String email) {
+    public ParentAccount(String firstName, String lastName, String middleInitial, String email, Long childID) {
         this.firstName = firstName;
         this.middleInitial = middleInitial;
         this.lastName = lastName;
         this.email = email;
+        this.childID = childID;
 
     }
 
@@ -72,7 +76,11 @@ public class ParentAccount {
     }
     public String getEmail(){
 		return email;
-}
+    }
+    
+    public Long getChildID(){
+    	return childID;
+    }
 
 // mutators
     public void setFirstName(String firstName) {
@@ -89,6 +97,10 @@ public class ParentAccount {
     
     public void setEmail(String email) {
     		this.email = email;
+    }
+    
+    public void setChildID(Long childID){
+    	this.childID = childID;
     }
     
     @SuppressWarnings("unchecked")

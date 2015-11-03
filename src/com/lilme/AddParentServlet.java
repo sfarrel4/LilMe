@@ -20,7 +20,13 @@ public class AddParentServlet extends HttpServlet {
 		String middleInitial = req.getParameter("middleInitial");
 		String lastName = req.getParameter("lastName");
 		String email = req.getParameter("email");
-
+		String child = req.getParameter("childID");
+		Long childID = null;
+		try{
+			childID = Long.parseLong(child);
+		}catch(NumberFormatException e){
+			
+		}
 		
 
 		//String[] childrenList = req.getParameterValues("childrenList");   
@@ -29,7 +35,7 @@ public class AddParentServlet extends HttpServlet {
 		boolean validEntry = isEmpty(validTest);
 		if (validEntry == false){
 			PersistenceManager pm = PMF.get().getPersistenceManager();
-			ParentAccount p = new ParentAccount(firstName, lastName, middleInitial, email);
+			ParentAccount p = new ParentAccount(firstName, lastName, middleInitial, email, childID);
 
 			try{
 				pm.makePersistent(p);

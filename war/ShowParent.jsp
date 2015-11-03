@@ -8,7 +8,7 @@
 
 <html lang="en">
 	<head>
-		<title>Show Children</title>
+		<title>Show Parents</title>
 		<link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<link href="assets/css/style.css" rel='stylesheet' type='text/css' />
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
@@ -68,6 +68,7 @@
 			String lastName = null;
 			String middleInitial = null;
 			String email = null;
+			Long childID = null;
 			List<ParentAccount> allParent= ParentAccount.getAllParent();
 			%>	
 				<table border="2">
@@ -87,13 +88,14 @@
 						lastName = allParent.get(i).getLastName();
 						middleInitial = allParent.get(i).getMiddleInitial();
 						email = allParent.get(i).getEmail();
+						childID = allParent.get(i).getChildID();
 					%>
 						<tr>
 							<td><%=lastName %></td>
 							<td><%=firstName %></td>
 							<td><%=middleInitial %></td>
 							<td><%=email %></td>
-					     	<td>test empty</td>
+					     	<td><%=childID %></td>
 						</tr><%
 				}%>
 			</table>

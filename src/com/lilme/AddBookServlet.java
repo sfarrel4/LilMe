@@ -22,12 +22,12 @@ public class AddBookServlet extends HttpServlet {
 		String bookSynop = req.getParameter("bookSynop");
 		String bookLessons = req.getParameter("bookLessons");
 		String bookQuestions = req.getParameter("bookQuestions");
-		String bookImage = req.getParameter("bookImage");
-		String[] validTest = {bookTitle, bookAuthor, bookSynop, bookLessons, bookQuestions, bookImage};
+		String bookImageURL = req.getParameter("bookImageURL");
+		String[] validTest = {bookTitle, bookAuthor, bookSynop, bookLessons, bookQuestions, bookImageURL};
 		boolean validEntry = isEmpty(validTest);
 		if (validEntry == false){
 			PersistenceManager pm = PMF.get().getPersistenceManager();
-			BookObject b = new BookObject(bookTitle, bookAuthor, bookSynop, bookLessons, bookQuestions, bookImage);
+			BookObject b = new BookObject(bookTitle, bookAuthor, bookSynop, bookLessons, bookQuestions, bookImageURL);
 
 			try{
 				pm.makePersistent(b);

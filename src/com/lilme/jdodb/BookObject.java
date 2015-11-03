@@ -34,15 +34,15 @@ public class BookObject {
 	    private String bookQuestions;
 	    
 	    @Persistent
-	    private String bookImage;
+	    private String bookImageURL;
 	    
-	    public BookObject(String bookTitle, String bookAuthor, String bookSynop, String bookLessons, String bookQuestions, String bookImage){
+	    public BookObject(String bookTitle, String bookAuthor, String bookSynop, String bookLessons, String bookQuestions, String bookImageURL){
 	    	this.bookTitle = bookTitle;
 	    	this.bookAuthor = bookAuthor;
 	    	this.bookSynop = bookSynop;
 	    	this.bookLessons = bookLessons;
 	    	this.bookQuestions = bookQuestions;
-	    	this.bookImage = bookImage;
+	    	this.bookImageURL = bookImageURL;
 	    }
 	    
 	    public Long getId() {
@@ -90,11 +90,11 @@ public class BookObject {
 	    }
 	    
 	    public String getBookImage(){
-	    	return bookImage;
+	    	return bookImageURL;
 	    }
 	    
-	    public void setBookImage(String bookImage){
-	    	this.bookImage = bookImage;
+	    public void setBookImage(String bookImageURL){
+	    	this.bookImageURL = bookImageURL;
 	    }
 	    
 	    @SuppressWarnings("unchecked")

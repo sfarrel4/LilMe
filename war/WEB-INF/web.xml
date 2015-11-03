@@ -36,6 +36,23 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>AddParentServlet</servlet-name>
 		<url-pattern>/add-parent</url-pattern>	
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>EmailBookServlet</servlet-name>
+		<servlet-class>com.lilme.EmailBookServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmailBookServlet</servlet-name>
+		<url-pattern>/email-book</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddBookServlet</servlet-name>
+		<servlet-class>com.lilme.AddBookServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddBookServlet</servlet-name>
+		<url-pattern>/add-book</url-pattern>
+	</servlet-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

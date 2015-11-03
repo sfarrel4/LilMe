@@ -20,13 +20,16 @@ public class BookObject {
 	    @Persistent
 	    private String bookSynop;
 	    
+	   // @Persistent
+	   // private Blob bookImage;
 	    @Persistent
-	    private Blob bookImage;
+	    private String bookImageURL;
 	    
-	    public BookObject(String bookTitle, String bookSynop, Blob bookImage){
+	    public BookObject(String bookTitle, String bookSynop, String bookImageURL){
 	    	this.bookTitle = bookTitle;
 	    	this.bookSynop = bookSynop;
-	    	this.bookImage = bookImage;
+	    	//this.bookImage = bookImage;
+	    	this.bookImageURL = bookImageURL;
 	    }
 	    
 	    public Long getId() {
@@ -49,11 +52,11 @@ public class BookObject {
 	    	this.bookSynop = bookSynop;
 	    }
 	    
-	    public Blob getBookImage(){
-	    	return bookImage;
+	    public String getBookImage(){
+	    	return bookImageURL;
 	    }
 	    
-	    public void setBookImage(Blob bookImage){
-	    	this.bookImage = bookImage;
+	    public void setBookImage(String bookImage){
+	    	this.bookImageURL = bookImage;
 	    }
 }

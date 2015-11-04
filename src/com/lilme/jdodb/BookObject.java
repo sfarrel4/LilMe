@@ -58,7 +58,7 @@ public class BookObject {
 	    }
 	    
 	    public String getBookAuthor(){
-	    	return bookTitle;
+	    	return bookAuthor;
 	    }
 	    
 	    public void setBookAuthor(String bookAuthor){

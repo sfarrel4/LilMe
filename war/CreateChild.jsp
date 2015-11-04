@@ -31,30 +31,33 @@
 		<!--end-animated-css-->
 	</head>
 	<body>
-		<div class="mother-grid" id="home">
-    		<div class="container">
-        		<div class="header clock wow bounceIn">
-            		<h1><a href="index.html">Lil Me Daycare</a></h1>
-                	<div class="nav-top">
-                		<span class="menu"><img src="assets/images/menu-icon.png" alt=""></span>
-                    	<ul class="navgation">
-                    		<li><a class="active" href="CreateChild.jsp" class="scroll">Enroll Child</a></li>
-                        	<li><a class="active" href="ChooseGroup.jsp" class="scroll">View Lunch Groups</a></li>
-                       	<li><a class="active" href="CreateParent.jsp" class="scroll">Create Parent</a></li>
-                           	    	<li><a class="active" href="ShowParent.jsp" class="scroll">Show Parent</a></li>
-                        </ul>
-                        <!--start-top-nav-script-->
-		 				<script>
-			            	$( "span.menu" ).click(function() {
-			            		$( "ul.navgation" ).slideToggle( 300, function() {});
-			            	});
-		                </script>
-						<!--End-top-nav-script-->
-                	</div>
-					<div class="clearfix"> </div>
-            	</div>
-    		</div>
-   		</div>
+		<<div class="mother-grid" id="home">
+    	<div class="container">
+        	<div class="header clock wow bounceIn">
+            	<h1><a href="index.html">Lil Me Daycare</a></h1>
+                <div class="nav-top">
+                	<span class="menu"><img src="assets/images/menu-icon.png" alt=""></span>
+                    <ul class="navgation">
+                    	<!-- <li><a class="active" href="CreateChild.jsp" class="scroll">Enroll Child</a></li>
+                        <li><a class="active" href="ChooseGroup.jsp" class="scroll">View Lunch Groups</a></li>
+                        <li><a class="active" href="CreateParent.jsp" class="scroll">Create Parent</a></li>
+                        <li><a class="active" href="ShowParent.jsp" class="scroll">Show Parent</a></li>
+                        <li><a class="active" href="EmailBook.jsp" class="scroll">Email Parent</a></li>
+                        <li><a class="active" href="CreateBook.jsp" class="scroll">Create Book</a></li>-->
+                        <li><a class="active" href="ProviderPage.html" class="scroll">Provider Homepage</a></li>
+                    </ul>
+                    <!--start-top-nav-script-->
+		 			<script>
+			        	$( "span.menu" ).click(function() {
+			            	$( "ul.navgation" ).slideToggle( 300, function() {});
+			            });
+		            </script>
+					<!--End-top-nav-script-->
+                </div>
+				<div class="clearfix"> </div>
+            </div>
+       </div>
+   </div>
 		<div class="mainStuff" role="form">
 			<img src='assets/images/childhandssmall.jpg' alt='Day Care Fun' style="max-height: 27em; max-width: 18em; float:left; padding-right: 2em;"/>
 			<h2>Add New Child</h2>

@@ -109,8 +109,6 @@
 								childID = allChild.get(i).getId();
 								%>
 								<option value="<%= childID %>" ><%= firstName %> <%= middleInitial %> <%= lastName %></option>
-								<% %>
-								
 						<% } %>
 						</select>
 					</div>

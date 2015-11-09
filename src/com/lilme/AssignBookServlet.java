@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lilme.jdodb.BookObject;
+import java.util.Date;
+import java.util.List;
+
+import com.lilme.jdodb.BookAssignment;
 import com.lilme.jdodb.ChildAccount;
 import com.lilme.jdodb.PMF;
 
@@ -17,17 +20,28 @@ public class AssignBookServlet extends HttpServlet {
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		String bookTitle = req.getParameter("bookTitle");
-		String bookAuthor = req.getParameter("bookAuthor");
-		String bookSynop = req.getParameter("bookSynop");
-		String bookLessons = req.getParameter("bookLessons");
-		String bookQuestions = req.getParameter("bookQuestions");
-		String bookImageURL = req.getParameter("bookImageURL");
-		String[] validTest = {bookTitle, bookAuthor, bookSynop, bookLessons, bookQuestions, bookImageURL};
+		String childIDNum = req.getParameter("childID");
+		String bookIDNum = req.getParameter("bookID");
+		String[] validTest = {childIDNum, bookIDNum};
 		boolean validEntry = isEmpty(validTest);
-		if (validEntry == false){
+		
+		Long childID = Long.parseLong(childIDNum);
+		Long bookID = Long.parseLong(bookIDNum);
+		
+		List<BookAssignment> allAssigned = BookAssignment.getAllAssigned();
+		boolean notExists = true;
+		Date todaysDate = new Date();
+		
+		for (int i = 0; i < allAssigned.size(); i++){
+			if (childID == allAssigned.get(i).getChildID() && todaysDate == allAssigned.get(i).getReadDate()){
+				notExists = false;
+				i += allAssigned.size();
+			}
+		}
+		
+		if (validEntry == false && notExists){
 			PersistenceManager pm = PMF.get().getPersistenceManager();
-			BookObject b = new BookObject(bookTitle, bookAuthor, bookSynop, bookLessons, bookQuestions, bookImageURL);
+			BookAssignment b = new BookAssignment(childID, bookID);
 
 			try{
 				pm.makePersistent(b);
@@ -35,9 +49,9 @@ public class AssignBookServlet extends HttpServlet {
 			finally{
 				pm.close();
 			}
-			resp.sendRedirect("CreateBook.jsp");
+			resp.sendRedirect("AssignBook.jsp");
 		} else {
-			resp.sendRedirect("CreateBook.jsp");
+			resp.sendRedirect("AssignBook.jsp");
 		}
 	}
 

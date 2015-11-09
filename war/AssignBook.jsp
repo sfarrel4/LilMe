@@ -65,46 +65,45 @@
    </div>
 			
 		<div class="mainStuff" align="center">
-<form action="/email-book" method="post">
-	<select name="email">
-	<option>--Parents--</option>
-	<%
-			String firstName = null;
-			String lastName = null;
-			String middleInitial = null;
-			String email = null;
-			Long childID = null;
-			List<ParentAccount> allParent= ParentAccount.getAllParent();
-			
-			String bookTitle = null;
-			String bookSynop = null;
-			String bookImageURL = null;
-			Long bookID = null;
-			List<BookObject> allBook = BookObject.getAllBooks();
+<form action="/assign-book" method="post">
 	
 	
-			for(int i = 0; i < allParent.size(); i++){
-				firstName = allParent.get(i).getFirstName();
-				lastName = allParent.get(i).getLastName();
-				middleInitial = allParent.get(i).getMiddleInitial();
-				email = allParent.get(i).getEmail();
-			%>	
-				<option value="<%=email %>"><%= firstName %> <%= middleInitial %> <%= lastName %></option>
-				
-			<%}
-			
-				
-	
+	<% 
+		String firstName = null;
+		String middleInitial = null;
+		String lastName = null;
+		Long childID = null;
+						
+		List<ChildAccount> allChild = ChildAccount.getAllChild();
 	%>
+		<label>Add Child: <span class="required">*</span></label> 
+		<select name="childID">
+		<option>-Children-</option>
+		<%
+			for (int i = 0; i<allChild.size(); i++) {
+				firstName = allChild.get(i).getFirstName();
+				lastName = allChild.get(i).getLastName();
+				middleInitial = allChild.get(i).getMiddleInitial();
+				childID = allChild.get(i).getId();
+		%>
+		<option value="<%= childID %>" ><%= firstName %> <%= middleInitial %> <%= lastName %></option>
+		<% } %>
 	</select>
-	<select name="book">
+	
+	<%
+		String bookTitle = null;
+		Long bookID = null;
+		List<BookObject> allBook = BookObject.getAllBooks();
+	%>
+	<label>Book read: <span class="required">*</span></label>
+	<select name="bookID">
 	<option>--Books--</option>
 	
-	<%
+		<%
 		for(int i= 0; i< allBook.size(); i++){
 			bookID = allBook.get(i).getId();
 			bookTitle = allBook.get(i).getBookTitle();
-	%>
+		%>
 		<option value="<%=bookID %>"><%=bookTitle %></option>
 		<%}
 	

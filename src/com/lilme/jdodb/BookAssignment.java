@@ -38,7 +38,7 @@ public class BookAssignment {
 	        return id;
 	    }
 	    
-	    public Long getChildId(){
+	    public Long getChildID(){
 	    	return childID;
 	    }
 	    
@@ -64,7 +64,7 @@ public class BookAssignment {
 	    
 
 	    @SuppressWarnings("unchecked")
-		public static List<BookAssignment> getAllBooks(){
+		public static List<BookAssignment> getAllAssigned(){
 	    	PersistenceManager pm = PMF.get().getPersistenceManager();
 			List<BookAssignment> results = null;
 			try {

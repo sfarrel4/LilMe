@@ -65,53 +65,55 @@
    </div>
 			
 		<div class="mainStuff" align="center">
-<form action="/assign-book" method="post">
+		<form action="/assign-book" method="post">
 	
-	
-	<% 
+		<% 
 		String firstName = null;
 		String middleInitial = null;
 		String lastName = null;
-		Long childID = null;
-						
+		Long childID = null;				
 		List<ChildAccount> allChild = ChildAccount.getAllChild();
-	%>
-		<label>Add Child: <span class="required">*</span></label> 
-		<select name="childID">
-		<option>-Children-</option>
-		<%
+		
+		String bookTitle = null;
+		Long bookID = null;
+		%>
+	
+		<table border="2">
+			<tr>
+				<td>Child Name</td>
+				<td>Book Name</td>
+			</tr>
+			<%
 			for (int i = 0; i<allChild.size(); i++) {
 				firstName = allChild.get(i).getFirstName();
 				lastName = allChild.get(i).getLastName();
 				middleInitial = allChild.get(i).getMiddleInitial();
-				childID = allChild.get(i).getId();
-		%>
-		<option value="<%= childID %>" ><%= firstName %> <%= middleInitial %> <%= lastName %></option>
+				childID = allChild.get(i).getId();%>
+				
+				<tr>
+					<td>
+						<select multiple size="1" name="childID">
+							<option value="<%= childID %>" ><%= firstName %> <%= middleInitial %> <%= lastName %></option>
+						</select>
+					</td>
+					<td>
+						<select name="bookID">
+						<option>--Books--</option>
+						<%
+						List<BookObject> allBook = BookObject.getAllBooks();
+						
+						for(int j= 0; j< allBook.size(); j++){
+							bookID = allBook.get(j).getId();
+							bookTitle = allBook.get(j).getBookTitle();
+						%>	<option value="<%=bookID %>"><%=bookTitle %></option>
+					<%	}%>
+						</select>
+					</td>
+				</tr>
 		<% } %>
-	</select>
-	
-	<%
-		String bookTitle = null;
-		Long bookID = null;
-		List<BookObject> allBook = BookObject.getAllBooks();
-	%>
-	<label>Book read: <span class="required">*</span></label>
-	<select name="bookID">
-	<option>--Books--</option>
-	
-		<%
-		for(int i= 0; i< allBook.size(); i++){
-			bookID = allBook.get(i).getId();
-			bookTitle = allBook.get(i).getBookTitle();
-		%>
-		<option value="<%=bookID %>"><%=bookTitle %></option>
-		<%}
-	
-	%>
-	
-	</select>
-<input type="submit" value="Submit" />
-</form>
+		</table> 
+		<input type="submit" value="Submit" />
+		</form>
 </div>
 <div class="footer">
 			<div class="container">

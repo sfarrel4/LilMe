@@ -53,11 +53,11 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/add-book</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>AssignBookServlet</servlet-name>
-		<servlet-class>com.lilme.AssignBookServlet</servlet-class>
+		<servlet-name>BookEmailServlet</servlet-name>
+		<servlet-class>com.lilme.BookEmailServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>AssignBookServlet</servlet-name>
+		<servlet-name>BookEmailServlet</servlet-name>
 		<url-pattern>/assign-book</url-pattern>
 	</servlet-mapping>
 	

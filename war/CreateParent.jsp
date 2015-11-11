@@ -78,17 +78,6 @@
 						<li><label>Email <span class="required">*</span></label><input type="text" name="email" class="field-long" placeholder="e-mail" /></li>
 					</ul>
 
-					<!-- <div>
-						Add Children: <select name="childrenList">
-									<option>Add Child</option>
-									<option value="1">Lunch Group 1</option>
-									<option value="2">Lunch Group 2</option>
-									<option value="3">Lunch Group 3</option>
-						</select>
-					</div> -->
-					
-					
-					
 					<div>
 						<% 
 						String firstName = null;

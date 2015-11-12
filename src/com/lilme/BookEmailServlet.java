@@ -52,6 +52,7 @@ public class BookEmailServlet extends HttpServlet {
 		String bookQuestions = null;
 		String bookImageUrl = null;
 		String childName = null;
+		String email = null;
 		
 		
 		
@@ -61,13 +62,16 @@ public class BookEmailServlet extends HttpServlet {
 		}
 		//convert book ID into long
 		for (int b = 0; b < books.length; b++){
-			if (books[b] != null){
+			if (books[b].equals("--Books--")){
+				bookIDs[b] = null;
+			}else {
 				bookIDs[b] = Long.parseLong(books[b]);
 			}
 		}
 		//make entry that the child[c] read book[c]
 		for (int c = 0; c < childIDs.length; c++){
-			if (allAssigned.get(c).getChildID() != childIDs[c] && df.format(allAssigned.get(c).getReadDate()).equals( df.format(new Date())) && bookIDs[c] != null){
+			for (int e = 0; e < allAssigned.size(); e++) {
+				if (allAssigned.get(e).getChildID() != childIDs[c] && df.format(allAssigned.get(e).getReadDate()).equals( df.format(new Date())) && bookIDs[c] != null){
 				BookAssignment b = new BookAssignment(childIDs[c], bookIDs[c]);
 
 				try{
@@ -77,15 +81,19 @@ public class BookEmailServlet extends HttpServlet {
 					pm.close();
 				}
 			}
+			}
 		}
 		//send emails that the children[d] read books[d]
+		PersistenceManager pm2 = PMF.get().getPersistenceManager();
 		for (int d = 0; d < childIDs.length; d++){
 			if(bookIDs[d] != null){
 				for (int e = 0; e < parents.size(); e++){
 					if (parents.get(e).getChildID() == childIDs[d]){
-						BookObject book = pm.getObjectById(BookObject.class, bookIDs[d]);
-						ChildAccount child = pm.getObjectById(ChildAccount.class, childIDs[d]);
-						String email = parents.get(e).getEmail();
+						
+						try{
+						BookObject book = pm2.getObjectById(BookObject.class, bookIDs[d]);
+						ChildAccount child = pm2.getObjectById(ChildAccount.class, childIDs[d]);
+						email = parents.get(e).getEmail();
 						bookTitle = book.getBookTitle();
 						bookAuthor = book.getBookAuthor();
 						bookSum = book.getBookSynop();
@@ -93,11 +101,14 @@ public class BookEmailServlet extends HttpServlet {
 						bookQuestions = book.getBookQuestions();
 						bookImageUrl = book.getBookImage();
 						childName = child.getFirstName() + " " + child.getMiddleInitial() + " " + child.getLastName();
+						}catch (Exception g){
+							g.printStackTrace();
+						}
 						
 						Properties props = new Properties();
 						Session session = Session.getDefaultInstance(props, null);
 						
-							String htmlBody = "<!DOCTYPE html>"
+						String htmlBody = "<!DOCTYPE html>"
 									+ "<html>"
 									+ "<head>"
 									+ "<title> </title>"
@@ -119,15 +130,13 @@ public class BookEmailServlet extends HttpServlet {
 										+ "<b>Continue the Learning!:<br> </b>"
 										+ "" + bookQuestions + ""
 										+ "<br><br>"
-										+ "</body>"
-										+ "</html>";        
+									+ "</body>"
+									+ "</html>";        
 					       
+						Multipart mp = new MimeMultipart();
 
-					        Multipart mp = new MimeMultipart();
-
-					        MimeBodyPart htmlPart = new MimeBodyPart();
-					       
-						
+					    MimeBodyPart htmlPart = new MimeBodyPart();
+					    
 						//String msgBody = "Your Child read " + bookTitle + "\n Here is a link to an image of the book: \n" + bookImageUrl  ;
 						
 						try{

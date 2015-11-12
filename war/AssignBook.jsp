@@ -93,7 +93,7 @@
 				<tr>
 					<td>
 						<select multiple size="1" name="childID">
-							<option value="<%= childID %>" ><%= firstName %> <%= middleInitial %> <%= lastName %></option>
+							<option selected value="<%= childID %>" ><%= firstName %> <%= middleInitial %> <%= lastName %></option>
 						</select>
 					</td>
 					<td>

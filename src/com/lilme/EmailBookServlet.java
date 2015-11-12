@@ -100,7 +100,7 @@ public class EmailBookServlet extends HttpServlet {
 		
 		try{
 			Message msg = new MimeMessage(session);
-			msg.setFrom(new InternetAddress("ait390s1503stephen@gmail.com", "Lil' Me Daycare"));
+			msg.setFrom(new InternetAddress("ait390s1503josh@gmail.com", "Lil' Me Daycare"));
 			msg.addRecipient(Message.RecipientType.TO, 
 					new InternetAddress(email, "Parent"));
 			msg.setSubject("Take a look at what your child read today");

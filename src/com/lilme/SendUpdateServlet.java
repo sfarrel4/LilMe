@@ -39,7 +39,7 @@ public class SendUpdateServlet extends HttpServlet {
 		SimpleDateFormat df = new SimpleDateFormat("MM.dd.yyyy");
 		
 		for (int i = 0; i < parents.size(); i++){
-			 email = parents.get(i).getEmail();
+			email = parents.get(i).getEmail();
 			Properties props = new Properties();
 			Session session = Session.getDefaultInstance(props, null);
 			

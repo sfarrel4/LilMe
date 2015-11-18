@@ -192,7 +192,7 @@
               <ul class="treeview-menu">
                 <li><a href="adminLunchGroup.jsp"><i class="fa fa-circle-o"></i>View Lunch Groups</a></li>
 				<li><a href="adminShowParents.jsp"><i class="fa fa-circle-o"></i>View Parents</a></li>
-				<li><a href="AdminShowBooks.jsp"><i class="fa fa-circle-o"></i>View Books</a></li>
+				<li><a href="adminShowBooks.jsp"><i class="fa fa-circle-o"></i>View Books</a></li>
 			 </ul>
             </li>
             <li>

@@ -42,7 +42,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="index.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>A</b>LT</span>
           <!-- logo for regular state and mobile devices -->
@@ -150,7 +150,7 @@
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li>
-              <a href="member.html">
+              <a href="admin.html">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
               </a>
             </li>
@@ -159,15 +159,25 @@
 				<i class="fa fa-envelope"></i> <span>Send Email</span></i>
 				</a>
 			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-group"></i> <span>Send Update</span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="adminSendUpdate.jsp"><i class="fa fa-circle-o"></i>Send Update Email</a></li>
+				</ul>
+			</li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-edit"></i> <span>Forms</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="adminAddChild.jsp"><i class="fa fa-circle-o"></i> Add Child</a></li>
-                <li><a href="adminAddParent.jsp"><i class="fa fa-circle-o"></i> Add Parent</a></li>
-              </ul>
+                <li><a href="adminAddChild.jsp"><i class="fa fa-circle-o"></i>Add Child</a></li>
+                <li><a href="adminAddParent.jsp"><i class="fa fa-circle-o"></i>Add Parent</a></li>
+				<li><a href="adminAddBook.jsp"><i class="fa fa-circle-o"></i>Add Book</a></li>
+			 </ul>
             </li>
             <li class="treeview">
               <a href="#">
@@ -175,8 +185,10 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="adminLunchGroup.jsp"><i class="fa fa-circle-o"></i> View Lunch Groups</a></li>
-              </ul>
+                <li><a href="adminLunchGroup.jsp"><i class="fa fa-circle-o"></i>View Lunch Groups</a></li>
+				<li><a href="adminShowParents.jsp"><i class="fa fa-circle-o"></i>View Parents</a></li>
+				<li><a href="adminShowBooks.jsp"><i class="fa fa-circle-o"></i>View Books</a></li>
+			 </ul>
             </li>
             <li>
               <a href="calendar.html">

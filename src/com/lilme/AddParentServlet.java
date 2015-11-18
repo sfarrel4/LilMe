@@ -7,6 +7,7 @@ import javax.jdo.PersistenceManager;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.lilme.jdodb.*;
 
 @SuppressWarnings("serial")
@@ -27,6 +28,7 @@ public class AddParentServlet extends HttpServlet {
 		}catch(NumberFormatException e){
 			
 		}
+		String redirectURL = req.getParameter("url");
 		
 
 		//String[] childrenList = req.getParameterValues("childrenList");   
@@ -43,9 +45,9 @@ public class AddParentServlet extends HttpServlet {
 			finally{
 				pm.close();
 			}
-			resp.sendRedirect("CreateParent.jsp");
+			resp.sendRedirect(redirectURL);
 		} else {
-			resp.sendRedirect("CreateParent.jsp");
+			resp.sendRedirect(redirectURL);
 		}
 	}
 

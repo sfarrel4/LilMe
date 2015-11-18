@@ -25,6 +25,7 @@ public class AddChildServlet extends HttpServlet {
 		String DOBDay = req.getParameter("DOBDay");
 		String DOBYear = req.getParameter("DOBYear");
 		String lunchTest = req.getParameter("lunchGroup");
+		String redirectURL = req.getParameter("url");
 		
 		boolean hasAllergies = false;
 
@@ -50,9 +51,9 @@ public class AddChildServlet extends HttpServlet {
 				pm.close();
 			}
 			String message = " Added child successfully!";
-            resp.sendRedirect("CreateChild.jsp?message=" + URLEncoder.encode(message, "UTF-8"));
+            resp.sendRedirect(redirectURL + "?message=" + URLEncoder.encode(message, "UTF-8"));
 		} else {
-			resp.sendRedirect("CreateChild.jsp");
+			resp.sendRedirect(redirectURL);
 		}
 	}
 

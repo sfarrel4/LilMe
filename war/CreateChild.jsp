@@ -31,7 +31,7 @@
 		<!--end-animated-css-->
 	</head>
 	<body>
-		<<div class="mother-grid" id="home">
+		<div class="mother-grid" id="home">
     	<div class="container">
         	<div class="header clock wow bounceIn">
             	<h1><a href="index.html">Lil Me Daycare</a></h1>
@@ -159,6 +159,9 @@
 							<option value="2">Lunch Group 2</option>
 							<option value="3">Lunch Group 3</option>
 						</select>
+    				</li>
+    				<li>
+    					<input type="hidden" name="url" value="CreateChild.jsp">
     				</li>
     				<li>
         				<input type="submit" value="Submit" />

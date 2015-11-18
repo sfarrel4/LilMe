@@ -66,20 +66,21 @@
 
 
 Book Title: <input type="text" name="bookTitle" />
-</br>
+<br />
 Book Author: <input type="text" name="bookAuthor" />
-</br>
+<br />
 <textarea rows="4" cols="50" name="bookSynop" form="bookForm">
 Enter the Book Synopsis...</textarea>
-</br>
+<br />
 <textarea rows="4" cols="50" name="bookLessons" form="bookForm">
 Enter the Book Lessons...</textarea>
-</br>
+<br />
 <textarea rows="4" cols="50" name="bookQuestions" form="bookForm">
 Enter the Book Questions...</textarea>
-</br>
+<br />
 Book URL: <input type="text" name="bookImageURL" />
-</br>
+<br />
+<input type="hidden" name="url" value="CreateBook.jsp">
 <input type="submit" value="Submit" />
 </form>
 </div>

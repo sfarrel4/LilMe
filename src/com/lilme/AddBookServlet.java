@@ -23,6 +23,8 @@ public class AddBookServlet extends HttpServlet {
 		String bookLessons = req.getParameter("bookLessons");
 		String bookQuestions = req.getParameter("bookQuestions");
 		String bookImageURL = req.getParameter("bookImageURL");
+		String redirectURL = req.getParameter("url");
+		
 		String[] validTest = {bookTitle, bookAuthor, bookSynop, bookLessons, bookQuestions, bookImageURL};
 		boolean validEntry = isEmpty(validTest);
 		if (validEntry == false){
@@ -35,9 +37,9 @@ public class AddBookServlet extends HttpServlet {
 			finally{
 				pm.close();
 			}
-			resp.sendRedirect("CreateBook.jsp");
+			resp.sendRedirect(redirectURL);
 		} else {
-			resp.sendRedirect("CreateBook.jsp");
+			resp.sendRedirect(redirectURL);
 		}
 	}
 

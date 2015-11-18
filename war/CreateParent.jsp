@@ -102,6 +102,9 @@
 						</select>
 					</div>
 					<div>
+    					<input type="hidden" name="url" value="CreateParent.jsp">
+					</div>
+					<div>
 					
 					<input type="submit" value="submit"/>
 					</div>	

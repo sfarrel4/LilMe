@@ -76,6 +76,7 @@
 			
 			List<ChildAccount> allChild = ChildAccount.getAllChild();
 			
+			
 			%>
 			<center><h2>Your Child</h2></center>
 			
@@ -89,7 +90,8 @@
 					<td>Lunch Group</td>
 				</tr>
 			<%	for(int i = 0; i < allChild.size(); i++){
-					if (allChild.get(i).getId() == childID){
+					Long test = allChild.get(i).getId();
+					if (childID.equals(test)){
 						firstName = allChild.get(i).getFirstName();
 						lastName = allChild.get(i).getLastName();
 						middleInitial = allChild.get(i).getMiddleInitial();

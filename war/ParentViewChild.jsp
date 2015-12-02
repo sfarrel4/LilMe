@@ -66,7 +66,7 @@
 			
 		<div class="mainStuff" align="center">
 <form action="ParentChildInfo.jsp" method="post">
-	<select name="childID">
+	<select name="child">
 	<option>--Parents--</option>
 	<%
 			String firstName = null;

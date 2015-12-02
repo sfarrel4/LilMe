@@ -49,7 +49,7 @@
                         <li><a class="active" href="ShowParent.jsp" class="scroll">Show Parent</a></li>
                         <li><a class="active" href="EmailBook.jsp" class="scroll">Email Parent</a></li>
                         <li><a class="active" href="CreateBook.jsp" class="scroll">Create Book</a></li>-->
-                        <li><a class="active" href="ProviderPage.html" class="scroll">Provider Homepage</a></li>
+                        <li><a class="active" href="ParentPage.html" class="scroll">Parent Homepage</a></li>
                     </ul>
                     <!--start-top-nav-script-->
 		 			<script>
@@ -72,14 +72,12 @@
 			String dateOfBirth = null;
 			int lunchGroup = 0;
 			String[] allergies = null;
-			Long childID = Long.parseLong(request.getParameter("child"));
+			Long childID = Long.valueOf(request.getParameter("child")).longValue();
 			
 			List<ChildAccount> allChild = ChildAccount.getAllChild();
 			
 			%>
 			<center><h2>Your Child</h2></center>
-				
-			
 			
 				<table border="2">
 				<tr>
